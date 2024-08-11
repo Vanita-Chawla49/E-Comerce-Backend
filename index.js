@@ -1,6 +1,14 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const corsConfig = {
+    origin:"*",
+    credential:true,
+    "methods":["GET","PUT","POST","PATCH","DELETE"]
+}
+app.options("", cors(corsConfig))
+app.use(cors(corsConfig));
+
 require("./db/config");
 const webhook = require("./webhook");
 const bodyParser = require("body-parser")
@@ -18,7 +26,7 @@ const jwtKey = "ecomm";
 const auth_routes = require("./routers/auth");
 
 // app.use(express.json());
-app.use(cors());
+
 app.use(express.static(path.join(__dirname, "public")))
 
 app.use((req,res,next)=>{

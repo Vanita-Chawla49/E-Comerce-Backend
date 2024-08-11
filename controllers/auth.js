@@ -1,13 +1,20 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const corsConfig = {
+    origin:"*",
+    credential:true,
+    "methods":["GET","PUT","POST","PATCH","DELETE"]
+}
+app.options("", cors(corsConfig))
+app.use(cors(corsConfig));
+
 const userModel = require("../db/user");
 
 const Jwt = require("jsonwebtoken");
 const jwtKey = "ecomm"
 
 app.use(express.json());
-app.use(cors())
 
 
 const login=async(req,res)=>{
