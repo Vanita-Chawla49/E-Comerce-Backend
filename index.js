@@ -8,6 +8,12 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"]
   }));
 
+  app.options('*', cors({
+    origin: "https://e-comerce-frontend-six.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 require("./db/config");
 const webhook = require("./webhook");
 const bodyParser = require("body-parser")

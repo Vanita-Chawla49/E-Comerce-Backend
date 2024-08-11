@@ -1,13 +1,20 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+
 app.use(cors({
     origin: "https://e-comerce-frontend-six.vercel.app", 
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"]
   }));
 
-  
+  app.options('*', cors({
+    origin: "https://e-comerce-frontend-six.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
+
 const userModel = require("../db/user");
 
 const Jwt = require("jsonwebtoken");
