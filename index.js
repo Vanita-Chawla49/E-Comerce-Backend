@@ -23,6 +23,7 @@ app.use(cors({
     origin: 'https://e-comerce-frontend-six.vercel.app/',
     credentials: true,
   }));
+  
 app.use(express.static(path.join(__dirname, "public")))
 
 app.use((req,res,next)=>{
