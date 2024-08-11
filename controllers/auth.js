@@ -7,7 +7,11 @@ const Jwt = require("jsonwebtoken");
 const jwtKey = "ecomm"
 
 app.use(express.json());
-app.use(cors())
+// app.use(cors())
+app.use(cors({
+    origin: 'https://e-comerce-frontend-six.vercel.app/',
+    credentials: true,
+  }));
 
 
 const login=async(req,res)=>{
