@@ -18,12 +18,7 @@ const jwtKey = "ecomm";
 const auth_routes = require("./routers/auth");
 
 // app.use(express.json());
-// app.use(cors());
-app.use(cors({
-    origin: 'https://e-comerce-frontend-six.vercel.app/',
-    credentials: true,
-  }));
-  
+app.use(cors());
 app.use(express.static(path.join(__dirname, "public")))
 
 app.use((req,res,next)=>{
