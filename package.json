@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "build": "echo 'No build step needed'",
+    "vercel-build": "echo 'No build step needed'"
   },
   "author": "",
   "license": "ISC",
