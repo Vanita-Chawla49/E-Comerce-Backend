@@ -4,7 +4,7 @@ const cors = require("cors");
 const corsConfig = {
     origin:"*",
     credential:true,
-    "methods":["GET","PUT","POST","PATCH","DELETE"]
+    methods:["GET","PUT","POST","PATCH","DELETE"]
 }
 app.options("", cors(corsConfig))
 app.use(cors(corsConfig));
